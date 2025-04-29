@@ -1,13 +1,21 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
 
-// Dynamic import for the Lottie animation
-// This prevents build errors when the JSON file is imported directly
+// Dynamically import Lottie with no SSR to avoid "document is not defined" error
+const LottieAnimation = dynamic(() => import('../ui/LottieAnimation'), { 
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-80 flex items-center justify-center text-white">
+      <p>Loading animation...</p>
+    </div>
+  )
+});
+
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -17,22 +25,6 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  // Use state to store the animation data
-  const [animationData, setAnimationData] = useState<any>(null);
-
-  // Load the animation data
-  useEffect(() => {
-    // In a real project, you would use a dynamic import
-    // This is a workaround for the demo
-    import('/Users/kenil/Desktop/temp/public/lottie/cake-frosting.json')
-      .then((data) => {
-        setAnimationData(data);
-      })
-      .catch((err) => {
-        console.error('Failed to load animation:', err);
-      });
-  }, []);
 
   return (
     <div ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
@@ -80,17 +72,7 @@ export default function Hero() {
             className="flex justify-center"
           >
             <div className="w-full max-w-md bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-xl">
-              {animationData ? (
-                <Lottie 
-                  animationData={animationData.default || animationData} 
-                  loop={true}
-                  className="w-full h-80"
-                />
-              ) : (
-                <div className="w-full h-80 flex items-center justify-center text-white">
-                  <p>Loading animation...</p>
-                </div>
-              )}
+              <LottieAnimation />
             </div>
           </motion.div>
         </div>
