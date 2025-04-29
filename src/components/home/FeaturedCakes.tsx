@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { cakes } from '@/lib/data';
+import { getCakeImageUrl } from '@/lib/unsplash';
 
 export default function FeaturedCakes() {
   const { ref, inView } = useInView({
@@ -63,14 +64,14 @@ export default function FeaturedCakes() {
               variants={itemVariants}
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-64 overflow-hidden bg-pink-100">
-                {/* In a real project, you would use actual images */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-pink-600 text-center p-4">
-                    {cake.name}<br />
-                    <span className="text-sm text-pink-400">Image placeholder</span>
-                  </p>
-                </div>
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={getCakeImageUrl(cake.category, parseInt(cake.id))}
+                  alt={cake.name}
+                  fill
+                  className="object-cover transition-transform hover:scale-105 duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{cake.name}</h3>

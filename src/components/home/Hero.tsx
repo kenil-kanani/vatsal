@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
+import { getHeroBackgroundUrl } from '@/lib/unsplash';
 
 // Dynamically import Lottie with no SSR to avoid "document is not defined" error
 const LottieAnimation = dynamic(() => import('../ui/LottieAnimation'), { 
@@ -33,7 +34,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
         style={{ 
           y,
-          backgroundImage: 'url(/images/hero-bg.jpg)',
+          backgroundImage: `url(${getHeroBackgroundUrl()})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(0.7)'

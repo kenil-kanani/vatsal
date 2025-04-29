@@ -7,13 +7,15 @@ import Masonry from 'react-masonry-css';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { cakes } from '@/lib/data';
+import { getCakeImageUrl } from '@/lib/unsplash';
 
 export default function MasonryGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const openLightbox = (imageUrl: string, index: number) => {
-    setSelectedImage(imageUrl);
+    // Use the Unsplash image URL instead of the stored URL
+    setSelectedImage(getCakeImageUrl(cakes[index].category, parseInt(cakes[index].id)));
     setSelectedIndex(index);
     document.body.style.overflow = 'hidden';
   };
@@ -26,7 +28,7 @@ export default function MasonryGallery() {
   const navigateLightbox = (direction: number) => {
     const newIndex = (selectedIndex + direction + cakes.length) % cakes.length;
     setSelectedIndex(newIndex);
-    setSelectedImage(cakes[newIndex].imageUrl);
+    setSelectedImage(getCakeImageUrl(cakes[newIndex].category, parseInt(cakes[newIndex].id)));
   };
 
   // Define breakpoints for the masonry grid
@@ -66,12 +68,14 @@ export default function MasonryGallery() {
                 className="relative overflow-hidden rounded-lg shadow-md cursor-pointer"
                 onClick={() => openLightbox(cake.imageUrl, index)}
               >
-                <div className="relative aspect-[4/5] bg-pink-100 flex items-center justify-center">
-                  {/* In a real project, you would use actual images */}
-                  <p className="text-pink-600 text-center p-4">
-                    {cake.name}<br />
-                    <span className="text-sm text-pink-400">{cake.category}</span>
-                  </p>
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src={getCakeImageUrl(cake.category, parseInt(cake.id))}
+                    alt={cake.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full bg-gradient-to-t from-black/70 to-transparent">
                       <h3 className="text-white font-bold">{cake.name}</h3>
@@ -148,12 +152,13 @@ export default function MasonryGallery() {
                 className="relative max-w-4xl max-h-[80vh] w-full h-full"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* In a real project, you would use actual images */}
-                <div className="absolute inset-0 flex items-center justify-center bg-pink-100">
-                  <p className="text-pink-600 text-center p-4 text-2xl font-bold">
-                    {cakes[selectedIndex].name}
-                  </p>
-                </div>
+                <Image
+                  src={selectedImage || ''}
+                  alt={cakes[selectedIndex].name}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                />
                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4">
                   <h3 className="text-xl font-bold">{cakes[selectedIndex].name}</h3>
                   <p className="text-sm opacity-80">{cakes[selectedIndex].description}</p>

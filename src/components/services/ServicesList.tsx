@@ -7,6 +7,7 @@ import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 import { services } from '@/lib/data';
+import { getServiceImageUrl } from '@/lib/unsplash';
 
 export default function ServicesList() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -38,11 +39,14 @@ export default function ServicesList() {
                 className="flex flex-col md:flex-row cursor-pointer"
                 onClick={() => toggleExpand(service.id)}
               >
-                <div className="md:w-1/3 relative h-64 bg-pink-100 flex items-center justify-center">
-                  {/* In a real project, you would use actual images */}
-                  <p className="text-pink-600 text-center p-4 font-medium">
-                    {service.title}
-                  </p>
+                <div className="md:w-1/3 relative h-64">
+                  <Image
+                    src={getServiceImageUrl(service.title.split(' ')[0].toLowerCase(), parseInt(service.id))}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="md:w-2/3 p-6 flex flex-col justify-between">
                   <div>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { teamMembers } from '@/lib/data';
+import { getTeamMemberImageUrl } from '@/lib/unsplash';
 
 export default function TeamSection() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -39,12 +40,13 @@ export default function TeamSection() {
                 transition={{ duration: 0.6 }}
                 style={{ backfaceVisibility: 'hidden' }}
               >
-                {/* In a real project, you would use actual images */}
-                <div className="absolute inset-0 bg-pink-100 flex items-center justify-center">
-                  <span className="text-pink-600 font-bold text-2xl">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+                <Image
+                  src={getTeamMemberImageUrl(parseInt(member.id) % 2 === 0 ? 'male' : 'female', parseInt(member.id))}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 text-white">
                   <h3 className="text-xl font-bold">{member.name}</h3>
                   <p className="text-pink-300">{member.role}</p>
