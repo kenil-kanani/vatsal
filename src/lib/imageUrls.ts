@@ -9,7 +9,8 @@
  */
 
 // Base URL for remote images (change this to your CDN or image hosting service)
-export const IMAGE_BASE_URL = 'http://localhost:3000/images';
+// export const IMAGE_BASE_URL = 'http://localhost:3000/images';
+export const IMAGE_BASE_URL = 'https://shreeji-cake.vercel.app/images';
 
 export const HERO_BACKGROUND_URL = `${IMAGE_BASE_URL}/hero-background.png}`
 
