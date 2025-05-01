@@ -50,7 +50,7 @@ export default function ServicesList() {
                 <div className="md:w-2/3 p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-bold">{service.title}</h3>
+                      <h3 className="text-xl text-black font-bold">{service.title}</h3>
                       <span className="text-pink-600 font-semibold">
                         {service.price}
                       </span>

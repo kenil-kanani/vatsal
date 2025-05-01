@@ -42,7 +42,7 @@ export default function Timeline() {
                       <h3 className="text-2xl font-bold text-pink-600 mb-2">
                         {milestone.year}
                       </h3>
-                      <h4 className="text-xl font-semibold mb-2">{milestone.title}</h4>
+                      <h4 className="text-xl text-black font-semibold mb-2">{milestone.title}</h4>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>

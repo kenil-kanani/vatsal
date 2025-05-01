@@ -245,7 +245,7 @@ export default function ContactForm() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
                   <p className="text-gray-600">
-                    Your message has been sent successfully. We'll get back to you soon.
+                    Your message has been sent successfully. We&apos;ll get back to you soon.
                   </p>
                 </motion.div>
               ) : (

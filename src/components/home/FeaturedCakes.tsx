@@ -72,7 +72,7 @@ export default function FeaturedCakes() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{cake.name}</h3>
+                <h3 className="text-xl text-black font-bold mb-2">{cake.name}</h3>
                 <p className="text-gray-600 mb-4">{cake.description}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-pink-600 font-bold">₹{cake.price}</span>
