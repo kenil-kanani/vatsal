@@ -15,7 +15,7 @@ export default function Timeline() {
       <Container>
         <SectionHeading
           title="Our Journey"
-          subtitle="How we've grown from a small home bakery to an artisan cake shop"
+          subtitle="How we've grown from a small home bakery to Gujarat's favorite cake shop"
           centered
         />
 

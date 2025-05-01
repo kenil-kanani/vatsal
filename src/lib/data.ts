@@ -90,6 +90,20 @@ export const teamMembers: TeamMember[] = [
     role: 'Head Baker & Founder',
     bio: 'With 10 years of experience in fine pastry, Kailash founded Shreeji Cake with a vision to create edible art that tastes as good as it looks. Trained at the Institute of Baking and Culinary Arts in Mumbai, he combines traditional Gujarati flavors with modern cake designs.',
     photoUrl: TEAM_IMAGES.claire
+  },
+  {
+    id: '2',
+    name: 'Priya Patel',
+    role: 'Cake Designer',
+    bio: 'Priya specializes in intricate fondant work and traditional Indian patterns. Her designs often incorporate elements from Gujarati textiles and architecture. She has won multiple awards for her wedding cake designs that blend Western techniques with Indian aesthetics.',
+    photoUrl: TEAM_IMAGES.claire
+  },
+  {
+    id: '3',
+    name: 'Amit Desai',
+    role: 'Pastry Chef',
+    bio: 'Amit is our fusion specialist who creates innovative flavor combinations. After training in Ahmedabad and working in top hotels across India, he joined Shreeji Cake to develop our signature line of cakes that blend traditional Indian sweets with modern cake textures.',
+    photoUrl: TEAM_IMAGES.claire
   }
 ];
 
@@ -140,19 +154,5 @@ export const services: Service[] = [
     description: 'Elegant, show-stopping wedding cakes designed to match your theme and style. Perfect for engagement ceremonies and wedding receptions. Includes consultation, tasting session, and delivery to your venue.',
     imageUrl: SERVICE_IMAGES.weddingCakes,
     price: 'Starting at ₹8,000'
-  },
-  {
-    id: '3',
-    title: 'Festival Special Cakes',
-    description: 'Celebrate Diwali, Raksha Bandhan, Holi and other festivals with our specially designed themed cakes. Eggless options available for all festival cakes.',
-    imageUrl: SERVICE_IMAGES.customCakes,
-    price: 'Starting at ₹1,200'
-  },
-  {
-    id: '4',
-    title: 'Corporate Events',
-    description: 'Impress your clients and colleagues with custom-branded cakes and desserts for corporate events, product launches, and office celebrations.',
-    imageUrl: SERVICE_IMAGES.weddingCakes,
-    price: 'Starting at ₹2,500'
   }
 ];
