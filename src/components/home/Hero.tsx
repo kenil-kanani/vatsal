@@ -2,20 +2,9 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
-import { getHeroBackgroundUrl } from '@/lib/unsplash';
-
-// Dynamically import Lottie with no SSR to avoid "document is not defined" error
-const LottieAnimation = dynamic(() => import('../ui/LottieAnimation'), { 
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-80 flex items-center justify-center text-white">
-      <p>Loading animation...</p>
-    </div>
-  )
-});
+import { HERO_BACKGROUND_URL } from '@/lib/imageUrls';
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,7 +14,6 @@ export default function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
@@ -34,7 +22,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
         style={{ 
           y,
-          backgroundImage: `url(${getHeroBackgroundUrl()})`,
+          backgroundImage: `${HERO_BACKGROUND_URL}`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(0.7)'
@@ -63,17 +51,6 @@ export default function Hero() {
               <Button href="/contact" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white">
                 Order Custom Cake
               </Button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <div className="w-full max-w-md bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-xl">
-              <LottieAnimation />
             </div>
           </motion.div>
         </div>

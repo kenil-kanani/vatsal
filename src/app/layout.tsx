@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Artisan Cake Shop",
+  title: "Shreeji Cake",
   description: "Handcrafted cakes for every special occasion",
-  keywords: ["cake", "bakery", "custom cakes", "wedding cakes", "birthday cakes"],
+  keywords: ["cake", "bakery", "custom cakes", "wedding cakes", "birthday cakes", "Gujarat", "Bayad"],
 };
 
 export default function RootLayout({

@@ -81,5 +81,5 @@ export function getTestimonialImageUrl(index: number = 0): string {
  */
 export function getHeroBackgroundUrl(): string {
   // Return a placeholder image for the hero background
-  return 'https://placehold.co/1600x900/FFC0CB/333333/png?text=Artisan+Cake+Shop';
+  return 'https://placehold.co/1600x900/FFC0CB/333333/png?text=Shreeji+Cake';
 }

@@ -37,7 +37,7 @@ export default function Header() {
       <Container>
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-pink-600">
-            Artisan Cakes
+            Shreeji Cake
           </Link>
 
           {/* Desktop Navigation */}

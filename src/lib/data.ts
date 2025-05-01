@@ -1,4 +1,5 @@
 import { Cake, Testimonial, TeamMember, Milestone, Service } from '@/types';
+import { CAKE_IMAGES, TESTIMONIAL_IMAGES, TEAM_IMAGES, SERVICE_IMAGES } from './imageUrls';
 
 export const cakes: Cake[] = [
   {
@@ -6,7 +7,7 @@ export const cakes: Cake[] = [
     name: 'Classic Vanilla Dream',
     description: 'A timeless three-layer vanilla cake with buttercream frosting and edible flowers. Perfect for weddings and special celebrations.',
     price: 65,
-    imageUrl: '/images/cakes/vanilla-dream.jpg',
+    imageUrl: CAKE_IMAGES.vanillaDream,
     category: 'wedding'
   },
   {
@@ -14,7 +15,7 @@ export const cakes: Cake[] = [
     name: 'Chocolate Decadence',
     description: 'Rich chocolate cake with ganache filling, chocolate buttercream, and chocolate shards. A chocolate lover\'s dream!',
     price: 55,
-    imageUrl: '/images/cakes/chocolate-decadence.jpg',
+    imageUrl: CAKE_IMAGES.chocolateDecadence,
     category: 'birthday'
   },
   {
@@ -22,7 +23,7 @@ export const cakes: Cake[] = [
     name: 'Berry Bliss',
     description: 'Light sponge cake layered with fresh seasonal berries and whipped cream. Topped with a berry compote.',
     price: 60,
-    imageUrl: '/images/cakes/berry-bliss.jpg',
+    imageUrl: CAKE_IMAGES.berryBliss,
     category: 'seasonal'
   },
   {
@@ -30,7 +31,7 @@ export const cakes: Cake[] = [
     name: 'Lemon Sunshine',
     description: 'Zesty lemon cake with lemon curd filling and cream cheese frosting. Decorated with candied lemon slices.',
     price: 50,
-    imageUrl: '/images/cakes/lemon-sunshine.jpg',
+    imageUrl: CAKE_IMAGES.lemonSunshine,
     category: 'specialty'
   },
   {
@@ -38,7 +39,7 @@ export const cakes: Cake[] = [
     name: 'Caramel Drizzle',
     description: 'Moist caramel cake with salted caramel filling, vanilla buttercream, and a dramatic caramel drip.',
     price: 58,
-    imageUrl: '/images/cakes/caramel-drizzle.jpg',
+    imageUrl: CAKE_IMAGES.caramelDrizzle,
     category: 'birthday'
   },
   {
@@ -46,7 +47,7 @@ export const cakes: Cake[] = [
     name: 'Red Velvet Romance',
     description: 'Classic red velvet cake with cream cheese frosting. Elegant and timeless for any celebration.',
     price: 62,
-    imageUrl: '/images/cakes/red-velvet.jpg',
+    imageUrl: CAKE_IMAGES.redVelvet,
     category: 'wedding'
   }
 ];
@@ -56,28 +57,28 @@ export const testimonials: Testimonial[] = [
     id: '1',
     name: 'Sarah Johnson',
     quote: 'The wedding cake exceeded all our expectations! Not only was it stunning to look at, but it tasted incredible. Our guests are still talking about it months later!',
-    photoUrl: '/images/testimonials/sarah.jpg',
+    photoUrl: TESTIMONIAL_IMAGES.sarah,
     rating: 5
   },
   {
     id: '2',
     name: 'Michael Chen',
     quote: 'I ordered a birthday cake for my daughter and she was thrilled! The attention to detail was amazing and the flavor was perfect - not too sweet and incredibly moist.',
-    photoUrl: '/images/testimonials/michael.jpg',
+    photoUrl: TESTIMONIAL_IMAGES.michael,
     rating: 5
   },
   {
     id: '3',
     name: 'Emily Rodriguez',
     quote: 'As someone with dietary restrictions, finding delicious cakes can be challenging. The team created a gluten-free option that was better than any regular cake I\'ve had!',
-    photoUrl: '/images/testimonials/emily.jpg',
+    photoUrl: TESTIMONIAL_IMAGES.emily,
     rating: 4
   },
   {
     id: '4',
     name: 'David Thompson',
     quote: 'The custom design for my wife\'s 40th birthday cake was spectacular. The cake artist captured her personality perfectly, and the taste was divine.',
-    photoUrl: '/images/testimonials/david.jpg',
+    photoUrl: TESTIMONIAL_IMAGES.david,
     rating: 5
   }
 ];
@@ -85,24 +86,10 @@ export const testimonials: Testimonial[] = [
 export const teamMembers: TeamMember[] = [
   {
     id: '1',
-    name: 'Claire Wilson',
+    name: 'Kailash Shah',
     role: 'Head Baker & Founder',
-    bio: 'With 15 years of experience in fine pastry, Claire founded Artisan Cake Shop with a vision to create edible art that tastes as good as it looks. Trained in Paris, she brings European techniques with local flavors.',
-    photoUrl: '/images/team/claire.jpg'
-  },
-  {
-    id: '2',
-    name: 'Marcus Lee',
-    role: 'Cake Designer',
-    bio: 'Marcus specializes in sculptural and architectural cake designs. His background in fine arts gives him a unique perspective on cake as a medium for creative expression.',
-    photoUrl: '/images/team/marcus.jpg'
-  },
-  {
-    id: '3',
-    name: 'Sophia Patel',
-    role: 'Pastry Chef',
-    bio: 'Sophia is our flavor expert, constantly developing new and exciting taste combinations. She ensures that every cake is as delicious as it is beautiful.',
-    photoUrl: '/images/team/sophia.jpg'
+    bio: 'With 10 years of experience in fine pastry, Claire founded Artisan Cake Shop with a vision to create edible art that tastes as good as it looks. Trained in Paris, she brings European techniques with local flavors.',
+    photoUrl: TEAM_IMAGES.claire
   }
 ];
 
@@ -144,35 +131,14 @@ export const services: Service[] = [
     id: '1',
     title: 'Custom Celebration Cakes',
     description: 'Personalized cakes for birthdays, anniversaries, and special occasions. Each cake is designed specifically for your event, with your choice of flavors, fillings, and decorative elements.',
-    imageUrl: '/images/services/custom-cakes.jpg',
-    price: 'Starting at $55'
+    imageUrl: SERVICE_IMAGES.customCakes,
+    price: 'Starting at ₹4,500'
   },
   {
     id: '2',
     title: 'Wedding Cakes',
     description: 'Elegant, show-stopping wedding cakes designed to match your theme and style. Includes consultation, tasting session, and delivery to your venue.',
-    imageUrl: '/images/services/wedding-cakes.jpg',
-    price: 'Starting at $350'
-  },
-  {
-    id: '3',
-    title: 'Cupcake Towers',
-    description: 'Beautiful arrangements of cupcakes in various flavors, perfect for events where individual servings are preferred. Can be combined with a small cutting cake for the top tier.',
-    imageUrl: '/images/services/cupcake-towers.jpg',
-    price: 'Starting at $3 per cupcake'
-  },
-  {
-    id: '4',
-    title: 'Dessert Tables',
-    description: 'Complete dessert experiences featuring a variety of treats including mini cakes, tarts, cookies, and more. Styled to complement your event.',
-    imageUrl: '/images/services/dessert-tables.jpg',
-    price: 'Starting at $250'
-  },
-  {
-    id: '5',
-    title: 'Cake Decorating Classes',
-    description: 'Learn the art of cake decorating in our workshop. Classes available for beginners to advanced decorators, covering techniques from basic piping to sugar flowers.',
-    imageUrl: '/images/services/cake-classes.jpg',
-    price: '$75 per person'
+    imageUrl: SERVICE_IMAGES.weddingCakes,
+    price: 'Starting at ₹25,000'
   }
 ];

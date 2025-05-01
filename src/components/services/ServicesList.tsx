@@ -7,7 +7,6 @@ import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 import { services } from '@/lib/data';
-import { getServiceImageUrl } from '@/lib/unsplash';
 
 export default function ServicesList() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -41,7 +40,7 @@ export default function ServicesList() {
               >
                 <div className="md:w-1/3 relative h-64">
                   <Image
-                    src={getServiceImageUrl(service.title.split(' ')[0].toLowerCase(), parseInt(service.id))}
+                    src={service.imageUrl}
                     alt={service.title}
                     fill
                     className="object-cover"

@@ -9,7 +9,7 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Artisan Cakes</h3>
+            <h3 className="text-xl font-bold mb-4">Shreeji Cake</h3>
             <p className="text-gray-300 mb-4">
               Crafting delicious memories, one cake at a time.
             </p>
@@ -57,16 +57,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>123 Bakery Street</p>
-              <p>Sweet Town, CA 90210</p>
+              <p>Swaminarayan soc, Bayad</p>
+              <p>383325, Gujarat, India</p>
               <p>Phone: (555) 123-4567</p>
-              <p>Email: hello@artisancakes.com</p>
+              <p>Email: hello@shreejicake.com</p>
             </address>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
-          <p>&copy; {currentYear} Artisan Cakes. All rights reserved.</p>
+          <p>&copy; {currentYear} Shreeji Cake. All rights reserved.</p>
         </div>
       </Container>
     </footer>

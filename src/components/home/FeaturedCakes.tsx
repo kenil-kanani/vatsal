@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
@@ -8,7 +7,6 @@ import Link from 'next/link';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { cakes } from '@/lib/data';
-import { getCakeImageUrl } from '@/lib/unsplash';
 
 export default function FeaturedCakes() {
   const { ref, inView } = useInView({
@@ -66,7 +64,7 @@ export default function FeaturedCakes() {
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={getCakeImageUrl(cake.category, parseInt(cake.id))}
+                  src={cake.imageUrl}
                   alt={cake.name}
                   fill
                   className="object-cover transition-transform hover:scale-105 duration-500"
@@ -77,7 +75,7 @@ export default function FeaturedCakes() {
                 <h3 className="text-xl font-bold mb-2">{cake.name}</h3>
                 <p className="text-gray-600 mb-4">{cake.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-pink-600 font-bold">${cake.price}</span>
+                  <span className="text-pink-600 font-bold">₹{cake.price}</span>
                   <Link 
                     href="/contact" 
                     className="text-pink-600 font-medium hover:text-pink-700 transition-colors"

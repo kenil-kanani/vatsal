@@ -7,7 +7,6 @@ import Masonry from 'react-masonry-css';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { cakes } from '@/lib/data';
-import { getCakeImageUrl } from '@/lib/unsplash';
 
 export default function MasonryGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -15,7 +14,7 @@ export default function MasonryGallery() {
 
   const openLightbox = (imageUrl: string, index: number) => {
     // Use the Unsplash image URL instead of the stored URL
-    setSelectedImage(getCakeImageUrl(cakes[index].category, parseInt(cakes[index].id)));
+    setSelectedImage(imageUrl);
     setSelectedIndex(index);
     document.body.style.overflow = 'hidden';
   };
@@ -23,12 +22,6 @@ export default function MasonryGallery() {
   const closeLightbox = () => {
     setSelectedImage(null);
     document.body.style.overflow = 'auto';
-  };
-
-  const navigateLightbox = (direction: number) => {
-    const newIndex = (selectedIndex + direction + cakes.length) % cakes.length;
-    setSelectedIndex(newIndex);
-    setSelectedImage(getCakeImageUrl(cakes[newIndex].category, parseInt(cakes[newIndex].id)));
   };
 
   // Define breakpoints for the masonry grid
@@ -70,7 +63,7 @@ export default function MasonryGallery() {
               >
                 <div className="relative aspect-[4/5]">
                   <Image
-                    src={getCakeImageUrl(cake.category, parseInt(cake.id))}
+                    src={cake.imageUrl}
                     alt={cake.name}
                     fill
                     className="object-cover"
@@ -120,30 +113,6 @@ export default function MasonryGallery() {
                 </svg>
               </button>
 
-              <button
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 z-10"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigateLightbox(-1);
-                }}
-                aria-label="Previous image"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
@@ -164,30 +133,6 @@ export default function MasonryGallery() {
                   <p className="text-sm opacity-80">{cakes[selectedIndex].description}</p>
                 </div>
               </motion.div>
-
-              <button
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 z-10"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigateLightbox(1);
-                }}
-                aria-label="Next image"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
             </motion.div>
           )}
         </AnimatePresence>
