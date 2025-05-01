@@ -27,7 +27,7 @@ export default function ServicesPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Custom Orders</h2>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              Don't see exactly what you're looking for? We love creating custom cakes 
+              Don&apos;t see exactly what you&apos;re looking for? We love creating custom cakes 
               tailored to your specific vision. Contact us to discuss your ideas and let 
               us bring them to life!
             </p>

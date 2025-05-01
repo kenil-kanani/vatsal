@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
 
 export default function LottieAnimation() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [animationData, setAnimationData] = useState<any>(null);
 
   useEffect(() => {
