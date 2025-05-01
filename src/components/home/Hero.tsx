@@ -37,12 +37,12 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Artisan Cakes <br />
+              Shreeji Cakes <br />
               <span className="text-pink-300">Baked with Love</span>
             </h1>
             <p className="text-xl text-white mb-8">
-              Handcrafted cakes for every special occasion. 
-              Made with premium ingredients and artistic flair.
+              Handcrafted cakes for weddings, birthdays and festivals.
+              Made with premium ingredients and traditional Gujarati flavors.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/gallery" variant="primary">

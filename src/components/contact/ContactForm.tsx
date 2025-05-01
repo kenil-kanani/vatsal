@@ -127,8 +127,8 @@ export default function ContactForm() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Address</h3>
                   <p className="mt-1 text-gray-600">
-                    123 Bakery Street<br />
-                    Sweet Town, CA 90210
+                    Swaminarayan Society<br />
+                    Bayad, Gujarat 383325
                   </p>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                  <p className="mt-1 text-gray-600">(555) 123-4567</p>
+                  <p className="mt-1 text-gray-600">+91 98765 43210</p>
                 </div>
               </div>
               
@@ -179,7 +179,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                  <p className="mt-1 text-gray-600">hello@artisancakes.com</p>
+                  <p className="mt-1 text-gray-600">hello@shreejicake.com</p>
                 </div>
               </div>
               
@@ -205,9 +205,9 @@ export default function ContactForm() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Hours</h3>
                   <p className="mt-1 text-gray-600">
-                    Monday - Friday: 9am - 6pm<br />
-                    Saturday: 10am - 4pm<br />
-                    Sunday: Closed
+                    Monday - Saturday: 10am - 8pm<br />
+                    Sunday: 11am - 5pm<br />
+                    Festival Days: Special Hours
                   </p>
                 </div>
               </div>
@@ -336,8 +336,13 @@ export default function ContactForm() {
                         >
                           <option value="">Select an occasion</option>
                           <option value="wedding">Wedding</option>
+                          <option value="engagement">Engagement</option>
                           <option value="birthday">Birthday</option>
                           <option value="anniversary">Anniversary</option>
+                          <option value="diwali">Diwali</option>
+                          <option value="raksha-bandhan">Raksha Bandhan</option>
+                          <option value="holi">Holi</option>
+                          <option value="navratri">Navratri</option>
                           <option value="corporate">Corporate Event</option>
                           <option value="other">Other</option>
                         </select>

@@ -57,9 +57,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>Swaminarayan soc, Bayad</p>
+              <p>Swaminarayan Society, Bayad</p>
               <p>383325, Gujarat, India</p>
-              <p>Phone: (555) 123-4567</p>
+              <p>Phone: +91 98765 43210</p>
               <p>Email: hello@shreejicake.com</p>
             </address>
           </div>
